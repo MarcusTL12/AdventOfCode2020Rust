@@ -9,9 +9,9 @@ pub const PARTS: [fn(); 2] = [part1, part2];
 
 fn load_input(filename: &str) -> Vec<u64> {
     BufReader::new(File::open(filename).unwrap())
-            .lines()
-            .map(|l| l.unwrap().parse().unwrap())
-            .collect()
+        .lines()
+        .map(|l| l.unwrap().parse().unwrap())
+        .collect()
 }
 
 fn part1() {
@@ -19,7 +19,7 @@ fn part1() {
     //
     let (a, b) = numbers
         .iter()
-        .cartesian_product(numbers.iter())
+        .tuple_combinations()
         .filter(|&(a, b)| a + b == 2020)
         .next()
         .unwrap();
@@ -30,11 +30,10 @@ fn part1() {
 fn part2() {
     let numbers = load_input("inputfiles/day1/input.txt");
     //
-    let ((a, b), c) = numbers
+    let (a, b, c) = numbers
         .iter()
-        .cartesian_product(numbers.iter())
-        .cartesian_product(numbers.iter())
-        .filter(|&((a, b), c)| a + b + c == 2020)
+        .tuple_combinations()
+        .filter(|&(a, b, c)| a + b + c == 2020)
         .next()
         .unwrap();
     //
