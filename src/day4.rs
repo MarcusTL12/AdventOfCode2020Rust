@@ -13,14 +13,14 @@ lazy_static! {
     static ref REG_PID: Regex = Regex::new(r"\d{9}").unwrap();
 }
 
-const REQUIRED_FIELDS: [&str; 7] =
-    ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
-
 fn part1() {
     let s = read_to_string("inputfiles/day4/input.txt").unwrap();
     //
     let mut map: HashMap<_, _> =
-        REQUIRED_FIELDS.iter().map(|&s| (s, false)).collect();
+        ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
+            .iter()
+            .map(|&s| (s, false))
+            .collect();
     //
     let ans = REG1
         .captures_iter(&s)
