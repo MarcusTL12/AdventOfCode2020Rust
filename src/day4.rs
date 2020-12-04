@@ -6,7 +6,7 @@ use regex::Regex;
 pub const PARTS: [fn(); 2] = [part1, part2];
 
 lazy_static! {
-    static ref REG1: Regex = Regex::new(r"((?:\w{3}:.+\s?)+)").unwrap();
+    static ref REG1: Regex = Regex::new(r"(?:\w{3}:.+\s?)+").unwrap();
     static ref REG2: Regex = Regex::new(r"(\w{3}):(\S+)").unwrap();
     static ref REG_HEIGHT: Regex = Regex::new(r"(\d+)(\w{2})").unwrap();
     static ref REG_COLOR: Regex = Regex::new(r"[a-f0-9]{6}").unwrap();
