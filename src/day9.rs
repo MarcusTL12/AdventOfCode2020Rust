@@ -22,17 +22,7 @@ fn first_invalid(filename: &str) -> Option<usize> {
                 let tmp = if nums
                     .iter()
                     .tuple_combinations()
-                    .filter_map(
-                        |(a, b)| {
-                            if a + b == n {
-                                Some(())
-                            } else {
-                                None
-                            }
-                        },
-                    )
-                    .next()
-                    .is_some()
+                    .any(|(a, b)| a + b == n)
                 {
                     Some(None)
                 } else {
