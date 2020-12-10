@@ -36,7 +36,6 @@ fn part1() {
     );
     //
     println!("{}", a * b);
-    // println!("1: {}, 3: {}", a, b);
 }
 
 fn part2() {
