@@ -52,19 +52,6 @@ fn do_step(
     for i in 0..h {
         for j in 0..w {
             let neighbours = neighbour_counter(from, (i, j));
-            // DIRS
-            // .iter()
-            // .filter_map(|(a, b)| {
-            //     from.get((i as isize + a) as usize)
-            //         .and_then(|row| row.get((j as isize + b) as usize))
-            //         .and_then(|x| x.as_ref())
-            // })
-            // .map(|x| match x {
-            //     Seat::Empty => 0,
-            //     Seat::Occupied => 1,
-            // })
-            // .sum();
-            //
             to[i][j] = match from[i][j] {
                 Some(Seat::Empty) => {
                     if neighbours == 0 {
