@@ -53,8 +53,10 @@ impl MemoryIter {
     }
 }
 
+const INPUT: &[u32] = &[14, 8, 16, 0, 1, 17];
+
 fn part1() {
-    let ans = MemoryIter::new(vec![14, 8, 16, 0, 1, 17])
+    let ans = MemoryIter::new(INPUT.iter().map(|&x| x).collect())
         .skip(2020 - 1)
         .next();
     //
@@ -62,7 +64,7 @@ fn part1() {
 }
 
 fn part2() {
-    let ans = MemoryIter::new(vec![14, 8, 16, 0, 1, 17])
+    let ans = MemoryIter::new(INPUT.iter().map(|&x| x).collect())
         .skip(30000000 - 1)
         .next();
     //
