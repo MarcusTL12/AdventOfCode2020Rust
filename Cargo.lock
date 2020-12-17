@@ -5,6 +5,7 @@ name = "adventofcode2020"
 version = "0.1.0"
 dependencies = [
  "arrayvec",
+ "collect_slice",
  "itertools",
  "lazy_static",
  "num-complex",
@@ -32,6 +33,12 @@ name = "autocfg"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
+
+[[package]]
+name = "collect_slice"
+version = "1.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7fcf7ebe98d2f8eba5ecf08e7ffa74384eea74b35d2fdee7aa417cf3a9cbe658"
 
 [[package]]
 name = "either"
